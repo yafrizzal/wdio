@@ -20,18 +20,19 @@ Feature: Heroku app Login Scenario
 #       | yaser           |     1234 |
 #       | wibowo.bullseye | bullseye |
 
-  # Scenario: Add item to cart
-  #   Given I am on the front page
-  #   When I try to login with username "yaser" and password "kadal123"
-  #   Then I am successfully login with username "yaser"
-  #   When I add items to cart:
-  #     | itemName          | quantity |
-  #     | Samsung galaxy s6 |        1 |
-    
-  Scenario: Successfully logOut
+  Scenario: Login, Add item to cart and logOut
     Given I am on the front page
     When I try to login with username "yaser" and password "kadal123"
     Then I am successfully login with username "yaser"
+    When I add items to cart:
+      | itemName          | quantity |
+      | Samsung galaxy s6 |        1 |
     When I try to logOut
+    
+  # Scenario: Successfully logOut
+  #   Given I am on the front page
+  #   When I try to login with username "yaser" and password "kadal123"
+  #   Then I am successfully login with username "yaser"
+  #   When I try to logOut
     
 
