@@ -25,6 +25,7 @@ When('I try to login with username {string} and password {string}', async(userna
 
 Then('I am successfully login with username {string}', async(username) => {
     await HomePage.verifyLoginSuccess(username)
+    await expect(username);
 })
 
 When('I add items to cart:', async(table) => {
@@ -39,6 +40,15 @@ When('I add items to cart:', async(table) => {
 
 When('I try to logOut', async() => {
   await FrontPage.logOut()
+})
+
+Then('I expect apear alert with text {string}',async (s) => {
+//   Write code here that turns the phrase above into concrete actions
+  let alert = await browser.getAlertText();
+  console.log(alert)
+  await expect(alert).toEqual("product added");
+   browser.acceptAlert();
+console.log(await browser.getAlertText())
 })
 
 // When(/^I try to login with username \"(.*)\" and password \"(.*)\"$/, async(username,password) => {

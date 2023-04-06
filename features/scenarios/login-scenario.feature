@@ -27,6 +27,7 @@ Feature: Heroku app Login Scenario
     When I add items to cart:
       | itemName          | quantity |
       | Samsung galaxy s6 |        1 |
+    Then I expect apear alert with text "product added"
     When I try to logOut
     
   # Scenario: Successfully logOut
